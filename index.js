@@ -4,7 +4,7 @@ const port = process.env.PORT || 8000;
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 //converting data to valid ascii format
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 // for using static files
 app.use(express.static(path.join(__dirname,'./assets')))
 app.use(expressLayouts);

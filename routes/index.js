@@ -10,7 +10,7 @@ router.get('/',homeController.home);
 router.get('/meta', metaController.meta);
 router.post('/meta/get-metatag-content', metaController.getMetaTagContent);
 router.get('/dns', dnsController.dns);
-
+router.post('/dns/get-dnstxt', dnsController.getDnsTxt);
 
 
 module.exports = router;

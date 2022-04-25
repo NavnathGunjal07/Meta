@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="descriptions" content="Hello world">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title  %> </title>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="css/meta.css">
 </head>
 <body>
-    Dns
+    <h1>DNS TXT Record</h1>
+    <div class="container">
+        <form action="/dns/get-dnstxt" method="POST">
+            <div id="url">
+                <label for="Url">Enter Url</label>
+                <input type="text" placeholder="Enter the Url" name="url"></input>
+            </div>
+            <div id="mettag">
+                <label for="dnsRecord">Enter dns txt record</label>
+                <input type="text" placeholder="Enter the dns txt record" name="dnstxt"></input>
+            </div>
+            <div id="submit">
+                <button type="submit" class="btn btn-info" name="submit" value="Submit">Submit</button>
+            </div>                      
+        </form>
+    </div>
 </body>
 </html>
