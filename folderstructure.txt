@@ -1,0 +1,21 @@
+📦MetaTag
+ ┣ 📂assets
+ ┗ ┣ 📂css
+        ┗ 📜home.css
+        ┗ 📜meta.css
+ ┣ 📂controllers
+ ┣ 📜dns.js
+ ┣ 📜meta.js
+ ┣ 📜home.js
+ ┣ 📂routes
+ ┃ ┗ 📜index.js
+ ┣ 📂views
+ ┃ ┣ 📜dnsTxt.ejs
+ ┃ ┣ 📜index.ejs
+ ┃ ┣ 📜layout.ejs
+ ┃ ┗ 📜metaTag.ejs
+ ┣ 📜.gitignore
+ ┣ 📜index.js
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┗ 📜procfile
