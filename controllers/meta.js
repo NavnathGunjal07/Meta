@@ -10,28 +10,29 @@ module.exports.meta = async function (req, res) {
 //controller for returning the meta tag content
 //used meta library documentation for this
 module.exports.getMetaTagContent = async function (req, res) {
-  let resObj = {};
-  if (stringIsAValidUrl(req.body.url)) {
-    let data = meta(req.body.url);
-    let metaname = req.body.metatag;
-    let string = data[metaname];
-    console.log(data);
-    
-    if (string !== undefined) {
-      resObj[metaname] = string;
-    } else {
-      resObj["Error"] = `${metaname} Not found in given url`;
-    }
-  
-    res.send(resObj);
-  }
-  else {
-    resObj["Error"] = `${req.body.url} Not found please enter valid url`;
-    res.send(resObj);
-  }
-  
-};
+  try {
+    let resObj = {};
+    if (stringIsAValidUrl(req.body.url)) {
+      let data = meta(req.body.url);
+      let metaname = req.body.metatag;
+      let string = data[metaname];
+      console.log(data);
 
+      if (string !== undefined) {
+        resObj[metaname] = string;
+      } else {
+        resObj["Error"] = `${metaname} Not found in given url`;
+      }
+
+      res.send(resObj);
+    } else {
+      resObj["Error"] = `${req.body.url} Not found please enter valid url`;
+      res.send(resObj);
+    }
+  } catch (err) {
+    resObj["Error"] = `Internal sever error:  ${err.message}`;
+  }
+};
 
 //function for validating url
 //used https://stackoverflow.com/questions/30931079/validating-a-url-in-node-js
